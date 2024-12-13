@@ -26,7 +26,7 @@ jobs:
 
       - name: Build and test with Maven
         #working-directory: ./simple-api
-        run: mvn clean verify --file ./simple-api/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=hamzahord_takima -Dsonar.organization=dimaraja -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./simple-api/pom.xml
 
   build-and-push-docker-image:
     needs: test-backend
