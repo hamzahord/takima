@@ -24,4 +24,5 @@ jobs:
 
       # Étape 3 : Construire et tester avec Maven
       - name: Build and test with Maven
+        working-directory: ./simple-api
         run: mvn clean verify
