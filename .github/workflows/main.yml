@@ -17,16 +17,17 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
-      
+          distribution: 'adoptopenjdk'  # Spécification de la distribution Java
+
       - name: List directory structure
         run: |
           echo "Listing directory structure for debug:"
-          ls -R # Cette commande va afficher toute l'arborescence du répertoire
+          ls -R
 
       - name: Check if pom.xml exists in the working directory
         run: |
           echo "Checking if pom.xml exists in the working directory"
-          ls ./simple-api # Vérifie si le répertoire 'simple-api' contient bien pom.xml
+          ls ./simple-api
       
       - name: Build with Maven
         working-directory: ./simple-api  # Assurez-vous que c'est le répertoire où se trouve votre POM
