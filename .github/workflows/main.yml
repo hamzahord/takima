@@ -17,6 +17,10 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '11'
+      
+      - name: List directory structure
+        run: ls -R
+        
 
       - name: Build with Maven
         working-directory: ./simple-api  # Assurez-vous que c'est le répertoire où se trouve votre POM
