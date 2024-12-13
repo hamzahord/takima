@@ -19,9 +19,15 @@ jobs:
           java-version: '11'
       
       - name: List directory structure
-        run: ls -R
-        
+        run: |
+          echo "Listing directory structure for debug:"
+          ls -R # Cette commande va afficher toute l'arborescence du répertoire
 
+      - name: Check if pom.xml exists in the working directory
+        run: |
+          echo "Checking if pom.xml exists in the working directory"
+          ls ./simple-api # Vérifie si le répertoire 'simple-api' contient bien pom.xml
+      
       - name: Build with Maven
         working-directory: ./simple-api  # Assurez-vous que c'est le répertoire où se trouve votre POM
         run: mvn clean verify
